@@ -3,19 +3,33 @@
 {% block title %}Hello AnnuaireController!{% endblock %}
 
 {% block body %}
-
-<div class="container my-4 mx-auto">
+<h1>Mon répertoire</h1>
+<div class="row row-cols-1 row-cols-md-2 g-4 my-4 mx-auto" style="max-width: 1240px;">
     {% for contact in contacts %}
-        <div class="card shadow p-4 m-2">
-        <div class="body">
-            <h5 class="card-title"><strong>
-                {{ contact.nom }} {{ contact. prenom }}
-            </strong></h5>
-            <p class="card-text">
-                {{ contact.telephone }}
-            </p>
+    <div class="col">
+        <div class="card shadow p-4 m-2" >
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="{{ contact.image }}" class="img-fluid rounded-start" alt="">
+                </div>
+            
+
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title"><strong>
+                            {{ contact.nom }} {{ contact. prenom }}
+                        </strong></h5>
+                    <p class="card-text">
+                        {{ contact.telephone }}
+                    </p>
+                    <p class="card-text">
+                        {{ contact.email }}
+                    </p>
+                </div>
+            </div>
+            </div>
         </div>
-        </div>
+    </div>
     {% endfor  %}
 </div>
 {% endblock %}
